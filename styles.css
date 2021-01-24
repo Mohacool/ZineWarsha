@@ -1,3 +1,32 @@
+:root {
+    --navbar-bg-color: hsl(0, 0%, 15%);
+    --navbar-text-color: hsl(0, 0%, 85%);
+    --navbar-text-color-focus: white;
+    --navbar-bg-contrast: hsl(0, 0%, 25%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#background{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    overflow:hidden;
+}
+#pattern {
+    background: url(pattern2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transform:scale(2);
+  }
+
 body,html{
     width:100%;
     height:100%;
@@ -5,42 +34,264 @@ body,html{
     padding:0;
 }
 
-
+/* center inner-contents of any class*/
 .center-flex{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Pattern styles */
+
+/* Pattern style (LEFT) */
 .left-half {
     background-color: #a4d7e0;
     float: left;
-    width: 50%;
+    width: 100%;
     height:800px;
-
-    
 }
+.logo{
+    width:500px;
+    transform:rotateZ(-8deg);
+    margin-top:100px;
+    margin-left:50px;
+    position:absolute;
+    z-index:1;
+}
+.myimg{
+    /* object-fit: contain;
+    width: 100%;
+    max-height:800px; */
+}
+/* Pattern style (RIGHT) */
 .right-half {
     background-color: #e4a656;
     float: right;
-    width: 50%;
+    width: 100%;
     height:800px;
 }
-
-.right{
-    float:right;
-}
-.left{
-    float:left;
-    
-}
+/* shortcut to float right/left */
+.right{float:right}
+.left{float:left}
 
 .centered-text{
     font-family: 'Raleway', sans-serif;
     padding-left:90px;
     padding-right:90px;
 }
+
+/* WIDTH BIGGER THAN 1000PX*/
+@media (min-width:1000px){
+    .left-half {
+        width: 50%;   
+    }
+    .right-half {
+        width: 50%;
+    }
+    
+}
+
+
+/* =========================Navbar ==============================*/
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    /* line-height: 1.6; */
+}
+
+.containery {
+    /* max-width: 1000px; */
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navbar {
+    --navbar-height: 64px;
+    position: fixed;
+    height: var(--navbar-height);
+    /* background-color: var(--navbar-bg-color); */
+    background-color: transparent;
+    left: 0;
+    right: 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.navbar-item {
+    margin: 0.4em;
+    /* width: 100%; */
+}
+.home-link{
+    visibility:hidden;
+}
+.home-link,
+.navbar-link {
+    color: rgb(192, 23, 23);
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+    font-family: 'Sail', cursive;
+}
+
+
+
+.navbar-link {
+    justify-content: center;
+    width: 100%;
+    /* padding: 0.4em 0.8em; */
+    padding-top:0.5em;
+    border-radius: 5px;
+}
+
+.navbar-link:focus,
+.navbar-link:hover {
+    /* color: var(--navbar-text-color-focus);
+    background-color: var(--navbar-bg-contrast); */
+}
+
+.navbar-logo {
+    background-color: var(--navbar-text-color-focus);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5em;
+}
+
+.navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    outline: none !important;
+}
+
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    transition: background-color 0.2s ease-in-out,
+                transform 0.2s ease-in-out,
+                opacity 0.2s ease-in-out;
+    background-color: var(--navbar-text-color);
+}
+
+.navbar-toggle:focus .icon-bar,
+.navbar-toggle:hover .icon-bar {
+    /* background-color: var(--navbar-text-color-focus); */
+}
+
+#navbar.opened .navbar-toggle .icon-bar:first-child,
+#navbar.opened .navbar-toggle .icon-bar:last-child {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+}
+
+#navbar.opened .navbar-toggle .icon-bar:first-child {
+    transform: rotate(45deg);
+}
+
+#navbar.opened .navbar-toggle .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#navbar.opened .navbar-toggle .icon-bar:last-child {
+    transform: rotate(-45deg);
+}
+
+.navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    transition: opacity 0.2s ease-in-out,
+                visibility 0.2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+    z-index:10;
+}
+
+#navbar.opened .navbar-menu {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: white;
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-links {
+    list-style-type: none;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    /* background-color: var(--navbar-bg-color); */
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 1.4rem;
+    border-radius: 5px;
+    
+    font-size:40px;
+}
+
+#navbar.opened .navbar-links {
+    padding: 1em;
+    max-height: none;
+}
+
+@media screen and (min-width: 700px) {
+    .navbar-toggle {
+        display: none;
+    }
+    
+    #navbar .navbar-menu,
+    #navbar.opened .navbar-menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        display: block;
+        height: 100%;
+    }
+
+    #navbar .navbar-links,
+    #navbar.opened .navbar-links {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        position: static;
+        flex-direction: row;
+        list-style-type: none;
+        max-height: max-content;
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar .navbar-link:last-child {
+        margin-right: 0;
+    }
+}
+/* =========================navbar end ======================*/
+
+
 
 
 
