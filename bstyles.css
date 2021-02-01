@@ -35,7 +35,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     height:100vh;
 }
 
-.logo_and_desc{
+#logo_and_desc{
     position:absolute;
     padding-top:25vh;
     padding-left: 19px;
@@ -70,6 +70,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+  }
+  .ornament{
+      cursor:pointer;
+  }
+  .ornament:hover{
+      /* color:rgb(3, 60, 153) !important; */
   }
 
 
@@ -131,6 +137,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background-color: transparent;
     left: 0;
     right: 0;
+    z-index: 100;
 }
 
 .navbar-container {
@@ -218,6 +225,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     position: absolute;
     margin: 0;
     width: 30px;
+    
 }
 
 #navbar.opened .navbar-toggle .icon-bar:first-child {
@@ -243,6 +251,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     left: 0;
     right: 0;
     z-index:10;
+
+    transition: opacity 0.5s ease-in-out,
+                visibility 0.5s ease-in-out;
 }
 
 #navbar.opened .navbar-menu {
@@ -250,6 +261,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background-color: white;
     opacity: 1;
     visibility: visible;
+    
 }
 
 .navbar-links {
@@ -280,8 +292,19 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 /* NON MOBILE MEDIA */
 @media screen and (min-width: 700px) {
 
-    .description{
-        font-size: 49px;
+    .description {
+        
+        font-size: 84px;
+        padding-left: 8vw;
+        padding-top: 20px;
+        line-height: 98px;
+    }
+
+    #logo_and_desc{
+        padding-left: 60px;
+    }
+    .logo{
+        width:35vw;
     }
 
     /* =============NAVBAR media query START======================= */

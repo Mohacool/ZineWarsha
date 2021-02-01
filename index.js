@@ -1,17 +1,25 @@
 const navbar = document.getElementById("navbar");
+const logo_and_desc = document.getElementById("logo_and_desc");
 const navbarToggle = navbar.querySelector(".navbar-toggle");
 
 function openMobileNavbar() {
   navbar.classList.add("opened");
   navbarToggle.setAttribute("aria-label", "Close navigation menu.");
-  document.getElementById("home").innerHTML = "home";
-  document.getElementById("essays").innerHTML = "essays";
-  document.getElementById("books").innerHTML = "books";
+
+  // Remove the . from the title names
+  // document.getElementById("home").innerHTML = "home";
+  // document.getElementById("essays").innerHTML = "essays";
+  // document.getElementById("books").innerHTML = "books";
 }
 
 function closeMobileNavbar() {
+  
   navbar.classList.remove("opened");
   navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+
+  // document.getElementById("home").innerHTML = "home ,";
+  // document.getElementById("essays").innerHTML = "essays ,";
+  // document.getElementById("books").innerHTML = "books ,";
 }
 
 navbarToggle.addEventListener("click", () => {
@@ -30,7 +38,6 @@ navbarLinksContainer.addEventListener("click", (clickEvent) => {
 });
 
 navbarMenu.addEventListener("click", closeMobileNavbar);
-
 
 
 var backStart = false;
