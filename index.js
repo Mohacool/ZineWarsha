@@ -46,6 +46,8 @@ var x = document.getElementById("myAudio");
 function playAudio() { 
   x.play(); 
 } 
+
+// On logo hover
 $('.logo').hover(function(){
     
     var t1 = gsap.timeline({
@@ -61,12 +63,19 @@ $('.logo').hover(function(){
         .to('#pattern',{rotation:45,duration:20},0);
         
     }
-    
-    
-    
+
     // ;
-    
+
+})
+
+$('.navbar-links').hover(function(){
+  $('.navbar-links').fadeOut(300);
+  $('.coming_soon').delay(500).fadeIn(800);
 
 
 })
+
+
+
+
 

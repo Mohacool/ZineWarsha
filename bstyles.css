@@ -76,6 +76,28 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   }
   .ornament:hover{
       /* color:rgb(3, 60, 153) !important; */
+      /* transition: all 0.5s ease-in-out; */
+      -webkit-text-stroke: 1px var(--warsha-red);
+      color:transparent;
+  }
+  .coming_soon{
+      position:absolute;
+      
+      font-family: "Times New Roman", Times, serif;
+      font-style:italic;
+      font-weight: 400;
+      font-size:40px;
+      color: var(--warsha-red);
+      top: 18px;
+      right: 37px;
+
+      font-size: 31px;
+
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      right:0;
+      
   }
 
 
@@ -202,6 +224,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     justify-content: center;
     flex-direction: column;
     outline: none !important;
+
+    /* temporary until completed */
+    display: none;
 }
 
 .icon-bar {
@@ -252,6 +277,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     right: 0;
     z-index:10;
 
+
     transition: opacity 0.5s ease-in-out,
                 visibility 0.5s ease-in-out;
 }
@@ -292,6 +318,22 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 /* NON MOBILE MEDIA */
 @media screen and (min-width: 700px) {
 
+    /* temporary until content added */
+    .navbar-toggle{
+        display:block;
+    }
+    .coming_soon{
+        display:none;
+        
+        
+        right: 37px;
+        font-size:40px;
+        width:unset;
+        align-items: unset;
+        text-align: unset;
+        
+    }
+
     .description {
         
         font-size: 84px;
@@ -306,10 +348,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     .logo{
         width:35vw;
     }
+   
     .left:before {
         height: 8px !important;
         bottom: 10px !important;
-       
+
+        height: 3px !important;
+        bottom: 15px !important;
     }
 
     /* =============NAVBAR media query START======================= */
@@ -362,6 +407,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   background-color: var(--warsha-red);
   visibility: hidden;
   transition: all 0.3s ease-in-out;
+
+  height: 2px;
+  bottom: 3px;
 }
 
 .left:hover:before {
