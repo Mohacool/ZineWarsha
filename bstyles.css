@@ -306,6 +306,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     .logo{
         width:35vw;
     }
+    .left:before {
+        height: 8px !important;
+        bottom: 10px !important;
+       
+    }
 
     /* =============NAVBAR media query START======================= */
     .navbar-toggle {
@@ -340,3 +345,26 @@ table, caption, tbody, tfoot, thead, tr, th, td {
      /* =============NAVBAR media query END======================= */
 }
 /* =========================navbar end ======================*/
+
+
+.left
+{
+    position: relative;
+}
+
+.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--warsha-red);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.left:hover:before {
+    visibility: visible;
+    width: 100%;
+}
