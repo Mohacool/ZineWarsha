@@ -4,7 +4,7 @@
 // or, set as you want
 const cursor = curDot({
   zIndex: 2,
-  diameter: 30,
+  diameter: 15,
   borderWidth: 1,
   borderColor: '#be1f1f',
   easing: 4,
@@ -14,15 +14,10 @@ const cursor = curDot({
 cursor.over('.ornament', {
 	background: '#be1f1f',
 	broderWidth: 2,
-	scale: 3,
+	scale: 10,
   })
 
-  cursor.over('.description', {
-	background: '#be1f1f',
-	broderWidth: 2,
-	scale: 3,
-  })
-
+ 
 
 
 
