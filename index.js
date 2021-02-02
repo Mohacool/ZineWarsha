@@ -1,7 +1,27 @@
 
+// const cursor = curDot()
 
+// or, set as you want
+const cursor = curDot({
+  zIndex: 2,
+  diameter: 30,
+  borderWidth: 1,
+  borderColor: '#be1f1f',
+  easing: 4,
+  background: '#be1f1f'
+})
 
+cursor.over('.ornament', {
+	background: '#be1f1f',
+	broderWidth: 2,
+	scale: 3,
+  })
 
+  cursor.over('.description', {
+	background: '#be1f1f',
+	broderWidth: 2,
+	scale: 3,
+  })
 
 
 
