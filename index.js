@@ -79,8 +79,11 @@ $('.logo').hover(function(){
 $('.navbar-links').hover(function(){
   $('.navbar-links').fadeOut(300);
   $('.coming_soon').delay(500).fadeIn(800);
+})
 
-
+$('.ornament').on('click',function(){
+  
+  playAudio();
 })
 
 
@@ -88,21 +91,33 @@ $( document ).ready(function() {
 	var t2 = gsap.timeline();
 
 	// Loading Logo
-	t2.to('.loading_logo',{opacity:1,duration:3})
-	.to('.loading_logo',{filter:'blur(0px)',duration:4},0)
-	.to('.loading_logo',{opacity:0,duration:1.5},3)
-	.to('.loading_logo',{filter:'blur(3px)',duration:1.5},3)
-	.to('.loader_container',{display:'none'})
-	.then(function(){
-		$('.all_container').css('display','block');
-		var t3 = gsap.timeline();
+	// t2.to('.loading_logo',{opacity:1,duration:3})
+	// .to('.loading_logo',{filter:'blur(0px)',duration:4},0)
+	// .to('.loading_logo',{opacity:0,duration:1.5},3)
+	// .to('.loading_logo',{filter:'blur(3px)',duration:1.5},3)
+	// .to('.loader_container',{display:'none'})
+	// .then(function(){
+	// 	$('.all_container').css('display','block');
+	// 	var t3 = gsap.timeline();
 
-		t3.to('.logo',{'opacity':'1',duration:1})
+	// 	t3.to('.logo',{'opacity':'1',duration:1})
 		
-		.to('.desc1',{padding:'0vh 0vh',duration:1, ease: "expo.out"},1)
-		.to('.desc2',{padding:'0vh 0vh',duration:1.3, ease: "expo.out"},1)
-		.to('.navbar-links',{margin:'0px 0px',duration:2,ease: "expo.out"},1);
-	})
+	// 	.to('.desc1',{padding:'0vh 0vh',duration:1, ease: "expo.out"},1)
+	// 	.to('.desc2',{padding:'0vh 0vh',duration:1.3, ease: "expo.out"},1)
+	// 	.to('.navbar-links',{margin:'0px 0px',duration:2,ease: "expo.out"},1);
+	// })
+
+	// Bypass loading FOR TESTING
+	$('.all_container').css('display','block');	
+	$('.loader_container').css('display','none');
+	$('.logo').css('opacity','1');
+	$('.desc1').css('padding','0vh 0vh');
+	$('.desc2').css('padding','0vh 0vh');
+	$('.navbar-links').css('margin','0px 0px');
+  
+
+  
+
 
 	
 
