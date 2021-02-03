@@ -29,7 +29,11 @@ cursor.over('.ornament', {
     $('.circle').css('display','block');
     $('.circle').css('transform',`translate(${mouseX}px,${mouseY}px) scale(1)`);
     var t5 = gsap.timeline();
-    t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5});
+    t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5})
+    .to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(1)`,duration:5},18)
+      .then(function(){
+        $('.circle').css('display','none');
+      });
     
     $('.circle').animate({
       'transform':`translate(${mouseX}px,${mouseY}px) scale(4)`
