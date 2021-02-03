@@ -31,6 +31,8 @@ cursor.over('.ornament', {
     var t5 = gsap.timeline();
     t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5})
     .to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(1)`,duration:5},18)
+    .to('.goeslikethis',{display:'block'},9)
+    .to('.goeslikethis',{display:'none'},10)
       .then(function(){
         $('.circle').css('display','none');
       });
