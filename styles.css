@@ -163,7 +163,7 @@ body{
   }
 
   .pattern_rotate{
-    transform-origin: 20% 39%;
+    /* transform-origin: 20% 39%; */
     transform: scale(1.1);
   }
 
