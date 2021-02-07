@@ -5,6 +5,9 @@ const small_cursor_diameter = 15;
 const grow_scale = 4;
 const big_cursor_diameter = small_cursor_diameter*grow_scale;
 
+const light_red = "#ac1212";
+const warsha_red = "#be1f1f";
+
 // or, set as you want
 const cursor = curDot({
   zIndex: 2,
@@ -16,25 +19,34 @@ const cursor = curDot({
 })
 
 cursor.over('.ornament', {
-	background: '#be1f1f',
-  broderWidth: 2,
+  background: '#be1f1f',
+  borderColor: '#be1f1f',
   easing: 40,
 	scale: grow_scale,
   })
+
+  
 
   $('.ornament').on('click',function(event){
     // alert(event.clientX+", "+event.clientY);
     let mouseX = event.clientX - big_cursor_diameter/2;
     let mouseY = event.clientY - big_cursor_diameter/2;
+    
+    $('#pattern').css('z-index',2);
+    var t7 = gsap.timeline();
+    t7.to('#logo',{opacity:'0',duration:0.2})
+    .to('.ay.description',{opacity:'0',duration:0.2},0);
+
+
     $('.circle').css('display','block');
     $('.circle').css('transform',`translate(${mouseX}px,${mouseY}px) scale(1)`);
     var t5 = gsap.timeline();
-    t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5})
-    .to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(1)`,duration:5},18)
-    .to('.goeslikethis',{display:'block'},9)
-    .to('.goeslikethis',{display:'none'},10)
+    t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5});
+    var t6 = gsap.timeline();
+    t6.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(1)`,duration:3},10)
       .then(function(){
         $('.circle').css('display','none');
+        $('#pattern').css('z-index',0);
       });
     
     $('.circle').animate({
@@ -102,25 +114,25 @@ function playAudio() {
 } 
 
 // On logo hover
-$('.logo').hover(function(){
+// $('.logo').hover(function(){
     
-    var t1 = gsap.timeline({
-        onStart:function(){
-            backStart = true;
-        }
-    });
+//     var t1 = gsap.timeline({
+//         onStart:function(){
+//             backStart = true;
+//         }
+//     });
 
-    if (!backStart){
-        x.play();
-        t1.to("#pattern", {transform: 'scale(3)', duration: 10},0)
-        .to("#pattern", {opacity: 1, duration: 10},0)
-        .to('#pattern',{rotation:45,duration:20},0);
+//     if (!backStart){
+//         x.play();
+//         t1.to("#pattern", {transform: 'scale(3)', duration: 10},0)
+//         .to("#pattern", {opacity: 1, duration: 10},0)
+//         .to('#pattern',{rotation:45,duration:20},0);
         
-    }
+//     }
 
-    // ;
+//     // ;
 
-})
+// })
 
 $('.navbar-links').hover(function(){
   $('.navbar-links').fadeOut(300);
