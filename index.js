@@ -10,22 +10,27 @@ const warsha_red = "#be1f1f";
 
 var ornament_clicked = false;
 
-// or, set as you want
-const cursor = curDot({
-  zIndex: 2,
-  diameter: small_cursor_diameter,
-  borderWidth: 1,
-  borderColor: '#be1f1f',
-  easing: 4,
-  background: '#be1f1f'
-})
+// IF not a mobile screen, show cursor
+if (!($('#cursor').css('display')=='none')){
 
-cursor.over('.ornament', {
-  background: '#be1f1f',
-  borderColor: '#be1f1f',
-  easing: 40,
-	scale: grow_scale,
-  })
+	const cursor = curDot({
+		zIndex: 2,
+		diameter: small_cursor_diameter,
+		borderWidth: 1,
+		borderColor: '#be1f1f',
+		easing: 4,
+		background: '#be1f1f'
+	  })
+	  
+	  cursor.over('.ornament', {
+		background: '#be1f1f',
+		borderColor: '#be1f1f',
+		easing: 40,
+		  scale: grow_scale,
+		})
+}
+
+
 
   
   // ====================== ON ORNAMENT CLICK =======================

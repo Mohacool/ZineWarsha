@@ -374,10 +374,16 @@ body{
     max-height: none;
 }
 
-
+@media only screen and (max-device-width: 700px) {
+    
+    #cursor{
+        display:none;
+    }
+  }
 
 /* NON MOBILE MEDIA */
 @media screen and (min-width: 700px) {
+    
 
     /* temporary until content added */
     .navbar-toggle{
