@@ -32,22 +32,75 @@ cursor.over('.ornament', {
     let mouseX = event.clientX - big_cursor_diameter/2;
     let mouseY = event.clientY - big_cursor_diameter/2;
     
-    $('#pattern').css('z-index',2);
+    $('.pattern').css('z-index',2);
     var t7 = gsap.timeline();
-    t7.to('#logo',{opacity:'0',duration:0.2})
-    .to('.ay.description',{opacity:'0',duration:0.2},0);
+    t7.to('#logo',{opacity:'0',duration:0.2},0)
+    .to('.ay.description',{opacity:'0',duration:0.2},0)
+    .to('.coming_soon',{opacity:'0',duration:0.2},0)
+    .to('.navbar-links',{opacity:'0',duration:0.2},0)
+    .to('.pattern_rotate',{transform:'scale(1.6)',duration:15},0)
+    .to('.pattern_rotate',{rotation:20,duration:20},0)
+    
+    ;
 
-
+    // Create circle on click
     $('.circle').css('display','block');
     $('.circle').css('transform',`translate(${mouseX}px,${mouseY}px) scale(1)`);
+
+    // Grow circle 
     var t5 = gsap.timeline();
     t5.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(50)`,duration:5});
+
+
+    // ================================ ON CIRCLE SHRINK =====================================
     var t6 = gsap.timeline();
     t6.to('.circle',{transform:`translate(${mouseX}px,${mouseY}px) scale(1)`,duration:3},10)
+
+      // after circle shrink
       .then(function(){
+
+        // Remove circle and hide the pattern 
         $('.circle').css('display','none');
-        $('#pattern').css('z-index',0);
+        $('.pattern').css('z-index',0);
+
       });
+    
+
+      setTimeout(function(){
+        // Reset everythings opacity and position
+        $('.ay.description').css('opacity',1);
+        $('.desc1').css('padding-top','50vh');
+        $('.desc2').css('padding-top','50vh');
+        $('.navbar-links').css('opacity',1);
+        $('.coming_soon').css('opacity',1);
+        $('.navbar-links').css('margin','-70px 0px')
+        $('.coming_soon').css('margin','-70px 0px');
+
+
+        // Re-appear logo and descriptions
+        var t8 = gsap.timeline();
+
+        t8.to('.loading_logo',{opacity:1,duration:3},0)
+        .to('.loading_logo',{filter:'blur(0px)',duration:4},0)
+        .to('.loading_logo',{opacity:0,duration:1.5},3)
+        .to('.loading_logo',{filter:'blur(3px)',duration:1.5},3)
+        .to('.loader_container',{display:'none'})
+        
+        .then(function(){
+          $('.all_container').css('display','block');
+          var t3 = gsap.timeline();
+      
+          t3.to('.logo',{'opacity':'1',duration:1})
+          
+          .to('.desc1',{padding:'0vh 0vh',duration:1, ease: "expo.out"},1)
+          .to('.desc2',{padding:'0vh 0vh',duration:1.3, ease: "expo.out"},1)
+          .to('.navbar-links',{margin:'0px 0px',duration:2,ease: "expo.out"},1)
+          .to('.coming_soon',{margin:'0px 0px',duration:2,ease: "expo.out"},1);
+        })
+        }, 8000);
+    
+    
+     
     
     $('.circle').animate({
       'transform':`translate(${mouseX}px,${mouseY}px) scale(4)`

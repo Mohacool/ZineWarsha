@@ -156,9 +156,15 @@ body{
       
   }
 
-  #pattern{
+  .pattern{
       position:absolute;
       /* z-index:3; */
+      transform: scale(1.1);
+  }
+
+  .pattern_rotate{
+    transform-origin: 20% 39%;
+    transform: scale(1.1);
   }
 
 
