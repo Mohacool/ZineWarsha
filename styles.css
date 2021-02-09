@@ -14,6 +14,11 @@
     padding: 0;
     -webkit-tap-highlight-color: transparent;
     cursor:none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    
 }
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
