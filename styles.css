@@ -39,15 +39,7 @@ body{
     overflow:hidden;
 }
 
-.goeslikethis{
-    font-family: 'Sail', cursive;
-    font-size: 100px;
-    position: absolute;
-    top: 20vh;
-    left: 20vw;
-    z-index:200;
-    display:none;
-}
+
 #myCanvas{
     position:absolute;
     width: 100%;
