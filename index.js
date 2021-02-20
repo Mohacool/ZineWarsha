@@ -235,12 +235,12 @@ $( document ).ready(function() {
 	})
 
 	// Bypass loading FOR TESTING
-	$('.all_container').css('display','block');	
-	$('.loader_container').css('display','none');
-	$('.logo').css('opacity','1');
-	$('.desc1').css('padding','0vh 0vh');
-	$('.desc2').css('padding','0vh 0vh');
-	$('.navbar-links').css('margin','0px 0px');
+	// $('.all_container').css('display','block');	
+	// $('.loader_container').css('display','none');
+	// $('.logo').css('opacity','1');
+	// $('.desc1').css('padding','0vh 0vh');
+	// $('.desc2').css('padding','0vh 0vh');
+	// $('.navbar-links').css('margin','0px 0px');
   
 
   
