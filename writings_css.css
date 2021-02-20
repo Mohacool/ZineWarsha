@@ -31,6 +31,10 @@ body,html{
     background-color: white;
 }
 
+.half-width{
+    width:46%;
+}
+
 .right{
     float:right;
 }
