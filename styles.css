@@ -227,6 +227,9 @@ body{
     margin: 0.4em;
     /* width: 100%; */
 }
+.navbar-item:hover{
+    text-decoration-line:underline;
+}
 .home-link{
     visibility:hidden;
 }
@@ -282,7 +285,7 @@ body{
     outline: none !important;
 
     /* temporary until completed */
-    display: none;
+    /* display: none; */
 }
 
 .icon-bar {
@@ -364,6 +367,34 @@ body{
     font-size:40px;
     
 }
+
+.enter_button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotate( 
+        -90deg
+         ) translate(48px, 0px);
+    z-index: 4000;
+    font-family: 'Rozha One', serif;
+    color: var(--warsha-red);
+    font-size: 25px;
+}
+.enter_button:hover{
+    text-decoration:underline;
+    opacity:1 !important;
+}
+.blink_me {
+    animation: blinker 2.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
 
 #navbar.opened .navbar-links {
     padding: 1em;

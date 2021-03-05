@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about_styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sail&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="all_container noselect">
+        <span class="circle"></span>
+        <!-- <img class="pattern" src="bkgd_png_white-2.png" alt="">
+        <img class="pattern pattern_rotate" src="bkgd_png_white-2.png" alt=""> -->
+        <!-- Navbar -->
+        <header id="navbar">
+            <nav class="navbar-container containery">
+                
+                <!-- Logo area hidden -->
+                <a href="/" class="home-link">
+                    <div class="navbar-logo">
+                        <img class="small_logo" src="logo.png" alt="">
+                    </div>
+                    
+                </a>
+    
+                <button type="button" class="navbar-toggle" aria-label="Open navigation menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+
+                <div class="navbar-menu">
+                    <ul class="navbar-links">
+                        <li class="navbar-item"><a id="home" class="navbar-link" href="/.">home </a></li>
+                        <li class="navbar-item"><a id="about" class="navbar-link underline" href="/about.html">about</a></li>
+                        <li class="navbar-item"><a id="writings" class="navbar-link" href="writings.html">writings</a></li>
+                        <li class="navbar-item"><a class="navbar-link" href="/shop">shop</a></li>
+                    </ul>
+                    
+                </div>
+                
+            </nav>
+            
+        </header>
+
+
+        <div class="body_holder">
+            <div class="about_body">
+                Warsha Zine is an intergrated design and research practice that produces objects, essays and research articles to reacquaint designers with craft, ornament, and tiles. Warsha explores the spiritual, religious and social significances of ornament on culture. 
+            </div>
+            <div class="current_focus">
+                Current Focus: <i>Zellige, Mosaic, Morocco, North Africa, Al-Andalous.</i>
+            </div>
+            
+        </div>
+       
+
+       
+
+    </div>
+    <div class="rights">
+        Ali Salama. Web Development by Mohamed Salama. All Rights Reserved.
+    </div>
+    
+
+    <script>
+        const navbar = document.getElementById("navbar");
+        const logo_and_desc = document.getElementById("logo_and_desc");
+        const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+        function openMobileNavbar() {
+            navbar.classList.add("opened");
+            navbarToggle.setAttribute("aria-label", "Close navigation menu.");
+
+            // Remove the . from the title names
+            // document.getElementById("home").innerHTML = "home";
+            // document.getElementById("essays").innerHTML = "essays";
+            // document.getElementById("books").innerHTML = "books";
+        }
+
+        function closeMobileNavbar() {
+        
+            navbar.classList.remove("opened");
+            navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+
+            // document.getElementById("home").innerHTML = "home ,";
+            // document.getElementById("essays").innerHTML = "essays ,";
+            // document.getElementById("books").innerHTML = "books ,";
+        }
+
+        navbarToggle.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeMobileNavbar();
+            } else {
+                openMobileNavbar();
+            }
+        });
+
+        const navbarMenu = navbar.querySelector(".navbar-menu");
+        const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+        navbarLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
+
+        navbarMenu.addEventListener("click", closeMobileNavbar);
+    </script>
+</body>
+</html>

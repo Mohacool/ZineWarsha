@@ -1,0 +1,128 @@
+ 
+.all_container{
+    display:block !important;
+}
+.loader_container{
+    display:none !important;
+}
+.logo{
+    opacity:1 !important;
+}
+.desc1, .desc2{
+    padding: 0vh 0vh !important;
+}
+.navbar-links{
+    margin: 0px 0px !important;
+}
+.underline{
+    text-decoration:underline;
+}
+.home-link{
+    visibility:visible !important;
+    
+}
+.navbar-item:hover{
+    cursor:pointer !important;
+}
+.small_logo{
+    width: 120px;
+    transform: rotate(
+    -7deg
+    );
+    
+}
+.small_logo:hover{
+    cursor:pointer !important;
+}
+
+.body_holder{
+    display:flex;
+    height:100vh;
+    width:100vw;
+    position:absolute;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about_body{
+    font-family: 'Rozha One', serif;
+    
+    color: var(--warsha-red);
+    display: flex;
+    
+    /* text-align: center; */
+   
+    text-align: left;
+    margin-top: 45px;
+
+    margin-top: 100px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight:800;
+
+    font-size: 25px;
+    padding-left: 23px;
+    padding-right: 10px;
+    /* margin-bottom: 50px; */
+    transform: translateY(-25%);
+}
+.current_focus{
+    font-family: "Times New Roman", Times, serif;
+    /* font-weight: 800; */
+    font-size: 24px;
+    color: var(--warsha-red);
+    transform: translateY(28px);
+   
+    padding-left: 23px;
+    padding-right: 35px;
+    font-size: 18px;
+    
+}
+
+.rights{
+    font-family: "Times New Roman", Times, serif;
+    font-style:italic;
+    color: var(--warsha-red);
+    bottom:5px;
+    right:5px;
+    position:absolute;
+    font-size:11px;
+    
+}
+
+*{
+    cursor:unset !important;
+}
+
+
+
+
+
+@media screen and (min-width: 500px) {
+    .small_logo{
+        width: 200px;
+        margin:11px 10px;
+    }
+    
+}
+@media screen and (min-width: 700px) {
+    
+    .about_body{
+        padding-left: 17%;
+        padding-right: 15%;
+    }
+    .rights{
+        font-size:13px;
+    }
+}
+@media screen and (min-width: 800px) {
+    
+    .about_body{
+        font-size: 42px;
+        transform: translateY(0);
+    }
+    .current_focus{
+        font-size: 26px;
+    }
+}
+

@@ -8,6 +8,12 @@ const big_cursor_diameter = small_cursor_diameter*grow_scale;
 const light_red = "#ac1212";
 const warsha_red = "#be1f1f";
 
+var bypass_animation = false;
+
+if (sessionStorage.getItem('animation_complete')){
+	bypass_animation = true;
+}
+
 var ornament_clicked = false;
 
 // IF not a mobile screen, show cursor
@@ -155,22 +161,22 @@ function closeMobileNavbar() {
   // document.getElementById("books").innerHTML = "books ,";
 }
 
-navbarToggle.addEventListener("click", () => {
-  if (navbar.classList.contains("opened")) {
-    closeMobileNavbar();
-  } else {
-    openMobileNavbar();
-  }
-});
+// navbarToggle.addEventListener("click", () => {
+//   if (navbar.classList.contains("opened")) {
+//     closeMobileNavbar();
+//   } else {
+//     openMobileNavbar();
+//   }
+// });
 
-const navbarMenu = navbar.querySelector(".navbar-menu");
-const navbarLinksContainer = navbar.querySelector(".navbar-links");
+// const navbarMenu = navbar.querySelector(".navbar-menu");
+// const navbarLinksContainer = navbar.querySelector(".navbar-links");
 
-navbarLinksContainer.addEventListener("click", (clickEvent) => {
-  clickEvent.stopPropagation();
-});
+// navbarLinksContainer.addEventListener("click", (clickEvent) => {
+//   clickEvent.stopPropagation();
+// });
 
-navbarMenu.addEventListener("click", closeMobileNavbar);
+// navbarMenu.addEventListener("click", closeMobileNavbar);
 
 
 var backStart = false;
@@ -201,10 +207,10 @@ function playAudio() {
 
 // })
 
-// $('.navbar-links').hover(function(){
-//   $('.navbar-links').fadeOut(300);
-//   $('.coming_soon').delay(500).fadeIn(800);
-// })
+$('.navbar-links').hover(function(){
+  $('.navbar-links').fadeOut(300);
+  $('.coming_soon').delay(500).fadeIn(800);
+})
 
 $('.ornament').on('click',function(){
   if (ornament_clicked==false){
@@ -233,24 +239,26 @@ $( document ).ready(function() {
 		.to('.desc2',{padding:'0vh 0vh',duration:1.3, ease: "expo.out"},1)
 		.to('.navbar-links',{margin:'0px 0px',duration:2,ease: "expo.out"},1);
 	})
+	.then(function(){
+		sessionStorage.setItem('animation_complete',true);
+	})
 
 	// Bypass loading FOR TESTING
-	// $('.all_container').css('display','block');	
-	// $('.loader_container').css('display','none');
-	// $('.logo').css('opacity','1');
-	// $('.desc1').css('padding','0vh 0vh');
-	// $('.desc2').css('padding','0vh 0vh');
-	// $('.navbar-links').css('margin','0px 0px');
-  
 
-  
-
-
+	if (bypass_animation){
+		$('.all_container').css('display','block');	
+		$('.loader_container').css('display','none');
+		$('.logo').css('opacity','1');
+		$('.desc1').css('padding','0vh 0vh');
+		$('.desc2').css('padding','0vh 0vh');
+		$('.navbar-links').css('margin','0px 0px');
+	}
 	
-
 
 });
 
-
-
+// Enter button STOP FLASHING ON HOVER
+$('.enter_button').mouseenter(function (){
+	$(this).removeClass('blink_me');
+})
 
