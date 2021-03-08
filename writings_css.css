@@ -1,3 +1,7 @@
+
+*{
+    cursor:unset !important;
+}
 body,html{
     width:100%;
     height:100%;
@@ -19,8 +23,10 @@ body,html{
     width: 100%;
     height:800px;
     background-color: white;
-    
 
+    /* Added March 8 */
+    height:100vh;
+    /* padding-bottom:10px; */
     
 }
 .right-half {
@@ -29,6 +35,10 @@ body,html{
     width: 100%;
     height:800px;
     background-color: white;
+
+    /* Added March 8 */
+    height:100vh;
+    /* padding-bottom:10px; */
 }
 
 .half-width{
@@ -53,12 +63,57 @@ body,html{
 
 .myimg{
     max-width:100%;
-    
-
     height: 100%;
     
     object-fit: cover;
+    /* allow image to shrink down in size */
+
+    /* height: 68%; */
 }
+.writings .myimg{
+    max-width:100%;
+    height: 100%;
+    
+    object-fit: cover;
+    /* allow image to shrink down in size */
+
+    /* height: 68%; */
+    height:50%;
+    height: 100vh;
+    width:100%;
+}
+
+.pt-10{
+    padding-top:10px;
+}
+.pb-10{
+    padding-bottom:10px;
+}
+.pl-10{
+    padding-left:10px;
+}
+.pl-5{
+    padding-left:5px;
+}
+.pr-10{
+    padding-right:10px;
+}
+.pr-5{
+    padding-right:5px;
+}
+
+.writings.navbar-link{
+    color:black;
+}
+.writings.icon-bar{
+    background-color:white !important;
+}
+.invert-white{
+    filter: brightness(0) invert(1);
+}
+
+
+
 .times-italic{
     font-family: "Times New Roman", Times, serif;
     font-style:italic;
@@ -125,10 +180,64 @@ body,html{
     min-height:300px;
 }
 
+
+/* Navbar fixes */
+.all_container{
+    display:flex !important;
+}
+.loader_container{
+    display:none !important;
+}
+.logo{
+    opacity:1 !important;
+}
+.desc1, .desc2{
+    padding: 0vh 0vh !important;
+}
+.navbar-links{
+    margin: 0px 0px !important;
+}
+.navbar-link:hover{
+    cursor:pointer !important;
+}
+
+.writings_holder{
+    padding-top: 127px;
+    overflow-y:scroll;
+}
+
+.move-up-100{
+    transform:translateY(-100px);
+}
+.move-down-100{
+    transform:translateY(100px);
+}
+.writings .myimg:hover{
+    opacity:0.5;
+    cursor:pointer !important;
+}
+.none{
+    display:none;
+}
+
+.koeman {
+    opacity: 0.7 !important;
+    /* background-blend-mode: multiply; */
+    mix-blend-mode: difference !important;
+    top:0 !important;
+}
+
+
 /* MEDIA QUERY ( AT SOME POINT) make left-half, right-half width:100% */
 
 @media only screen and (min-width: 900px) {
     .left-half,.right-half{
         width:50%;
     }
-  }
+}
+
+@media only screen and (min-height: 800px) {
+    .left-half,.right-half{
+        height:100vh;
+    }
+}

@@ -241,10 +241,10 @@ $( document ).ready(function() {
 	})
 	.then(function(){
 		sessionStorage.setItem('animation_complete',true);
+		$('.enter_button').fadeIn("3000");
 	})
 
 	// Bypass loading FOR TESTING
-
 	if (bypass_animation){
 		$('.all_container').css('display','block');	
 		$('.loader_container').css('display','none');
@@ -252,6 +252,7 @@ $( document ).ready(function() {
 		$('.desc1').css('padding','0vh 0vh');
 		$('.desc2').css('padding','0vh 0vh');
 		$('.navbar-links').css('margin','0px 0px');
+		$('.enter_button').show();
 	}
 	
 

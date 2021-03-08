@@ -265,7 +265,7 @@ body{
 }
 
 .navbar-logo {
-    background-color: var(--navbar-text-color-focus);
+    /* background-color: var(--navbar-text-color-focus); */
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -286,6 +286,7 @@ body{
 
     /* temporary until completed */
     /* display: none; */
+    z-index:4000;
 }
 
 .icon-bar {
@@ -379,6 +380,7 @@ body{
     font-family: 'Rozha One', serif;
     color: var(--warsha-red);
     font-size: 25px;
+    display:none;
 }
 .enter_button:hover{
     text-decoration:underline;
