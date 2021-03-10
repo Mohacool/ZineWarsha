@@ -81,6 +81,7 @@ if (!($('#cursor').css('display')=='none')){
 			// Remove circle and hide the pattern 
 			$('.circle').css('display','none');
 			$('.pattern').css('z-index',0);
+			$('.enter_button').fadeIn(3000);
 
 		});
 		
@@ -207,10 +208,10 @@ function playAudio() {
 
 // })
 
-$('.navbar-links').hover(function(){
-  $('.navbar-links').fadeOut(300);
-  $('.coming_soon').delay(500).fadeIn(800);
-})
+// $('.navbar-links').hover(function(){
+//   $('.navbar-links').fadeOut(300);
+//   $('.coming_soon').delay(500).fadeIn(800);
+// })
 
 $('.ornament').on('click',function(){
   if (ornament_clicked==false){
@@ -241,7 +242,7 @@ $( document ).ready(function() {
 	})
 	.then(function(){
 		sessionStorage.setItem('animation_complete',true);
-		$('.enter_button').fadeIn("3000");
+		// $('.enter_button').fadeIn("3000");
 	})
 
 	// Bypass loading FOR TESTING

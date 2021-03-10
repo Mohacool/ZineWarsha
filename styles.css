@@ -228,7 +228,7 @@ body{
     /* width: 100%; */
 }
 .navbar-item:hover{
-    /* text-decoration-line:underline;  */
+    text-decoration-line:underline; 
 }
 .home-link{
     visibility:hidden;
