@@ -7,6 +7,7 @@ body,html{
     height:100%;
     margin:0;
     padding:0;
+    overflow-x: hidden;
 }
 
 
@@ -69,6 +70,7 @@ body,html{
     /* allow image to shrink down in size */
 
     /* height: 68%; */
+    width:100%; /* added march 16 */
 }
 .writings .myimg{
     max-width:100%;
@@ -117,6 +119,7 @@ body,html{
 .times-italic{
     font-family: "Times New Roman", Times, serif;
     font-style:italic;
+    font-weight:700;
 }
 .damascus{
     font-size: 77px;
@@ -243,6 +246,26 @@ body,html{
 .body_text{
     font-size:9px;
 }
+.title-medium{
+    font-size: 18px;
+    text-align: center;
+}
+.quote_text{
+    font-size:15px;
+    font-style:italic;
+}
+.references{
+    font-size:6px;
+}
+.ref_page{
+    padding-left:70px;
+    padding-right:70px;
+}
+.hangingindent {
+    padding-left: 22px ;
+    text-indent: -22px ;
+    word-wrap: break-word;
+  }
 
 /* MEDIA QUERY ( AT SOME POINT) make left-half, right-half width:100% */
 
