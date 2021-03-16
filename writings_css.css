@@ -227,6 +227,22 @@ body,html{
     top:0 !important;
 }
 
+.title-big{
+    font-size:90px;
+}
+
+
+/* phone set up */
+.centered-text{
+    padding-left:40px;
+    padding-right:40px;
+}
+.title-big {
+    font-size: 54px;
+}
+.body_text{
+    font-size:9px;
+}
 
 /* MEDIA QUERY ( AT SOME POINT) make left-half, right-half width:100% */
 
