@@ -56,8 +56,9 @@
                     <ul class="navbar-links">
                         <li class="navbar-item"><a id="home" class="writings navbar-link" href="/.">home </a></li>
                         <li class="navbar-item"><a id="about" class="writings navbar-link" href="/about.html">about</a></li>
+                        <li class="navbar-item"><a id="about" class="writings navbar-link" onclick="open_youtube()">videos</a></li>
                         <li class="navbar-item"><a id="writings" class="writings navbar-link underline" href="writings.html">writings</a></li>
-                        <li class="navbar-item"><a class="writings navbar-link" href="/shop">shop</a></li>
+                        <li class="navbar-item"><a class="writings navbar-link" onclick="open_shop()">shop</a></li>
                     </ul>
                     
                 </div>
@@ -78,13 +79,13 @@
 				</span>
 					
 			</div> -->
-			<img class="writings myimg pt-10 pb-10 pr-5 pl-10" src="main1.jpeg" alt="">
+			<img class="writings myimg pt-10 pb-10 pr-5 pl-10" onclick="open_zellige()" src="main1.jpeg" alt="">
 			
 	
 		</div>
 		<div class="writings right-half center-flex ">
 			<!-- <img class="myimg" src="https://picsum.photos/500/800" alt=""> -->
-			<img class="writings myimg pt-10 pb-10 pr-10 pl-5" src="main2.jpg" alt="">
+			<img class="writings myimg pt-10 pb-10 pr-10 pl-5" onclick="open_zellige()" src="main2.jpg" alt="">
 		</div>
 	
 
@@ -154,6 +155,16 @@
 
         navbarMenu.addEventListener("click", closeMobileNavbar);
 
+        function open_shop(){
+            window.open("https://www.etsy.com/ca/shop/Warshazine?ref=simple-shop-header-name&listing_id=992096823");
+        }
+        function open_youtube(){
+            window.open("https://www.youtube.com/channel/UC3i_X1boE9a3HmWACESAluA/featured");
+        }
+
+        // function open_zellige(){
+        //     window.location.href = "/zellige.html";
+        // }
 
 
 

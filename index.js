@@ -264,3 +264,10 @@ $('.enter_button').mouseenter(function (){
 	$(this).removeClass('blink_me');
 })
 
+
+function open_shop(){
+	window.open("https://www.etsy.com/ca/shop/Warshazine?ref=simple-shop-header-name&listing_id=992096823");
+}
+function open_youtube(){
+	window.open("https://www.youtube.com/channel/UC3i_X1boE9a3HmWACESAluA/featured");
+}
